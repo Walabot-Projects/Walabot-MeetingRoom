@@ -1,0 +1,5 @@
+ngrok.exe
+free_rooms_db.json
+.idea/*
+__pycache__/*
+*pyc
