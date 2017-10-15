@@ -21,3 +21,4 @@ It's an example of an integration between Walabot and Alexa.
  * Run `s = socket.socket()`
  * Run `s.connect(("127.0.0.1", 9999))`
  * Run `s.send(json.dumps({"name": "yellow", "number_of_people": 0, "max_people": 10}).encode('UTF-8'))`
+ * For adding other rooms with different configuration please repeat the previous step using different parameters
