@@ -1,6 +1,4 @@
 # Meeting Room #
----
-
 This app helps you find a free meeting room around the office.
 It's an example of an integration between Walabot and Alexa.
 
@@ -16,7 +14,7 @@ It's an example of an integration between Walabot and Alexa.
  * Run `ngrok http 5000`
  * Copy the URL output from the previous step and use it in the configuration tabe at https://developer.amazon.com.
  
-## Testing without Walabot##
+## Testing without Walabot ##
  * Go to repo folder
  * Run `python`
  * Run `import json, socket`
