@@ -1,5 +1,7 @@
-This is an Alexa server for "meeting room" app using Walabot and Alexa. 
+Meeting Room app
 ---
+
+This is an app using Alexa along with Walabot for finding a free meeting room in the office.
 
 ## Questions you can ask Alexa ##
 * Alexa, meeting room
@@ -15,6 +17,7 @@ This is an Alexa server for "meeting room" app using Walabot and Alexa.
  
 ## Testing without Walabot##
  * Go to repo folder
+ * Run `python`
  * Run `import json, socket`
  * Run `s = socket.socket()`
  * Run `s.connect(("127.0.0.1", 9999))`
