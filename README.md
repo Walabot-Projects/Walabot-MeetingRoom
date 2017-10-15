@@ -1,7 +1,8 @@
-Meeting Room app
+# Meeting Room #
 ---
 
-This is an app using Alexa along with Walabot for finding a free meeting room in the office.
+This app helps you find a free meeting room around the office.
+It's an example of an integration between Walabot and Alexa.
 
 ## Questions you can ask Alexa ##
 * Alexa, meeting room
