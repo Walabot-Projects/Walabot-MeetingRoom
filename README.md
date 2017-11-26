@@ -2,19 +2,35 @@
 This app helps you find a free meeting room around the office.
 It's an example of an integration between Walabot and Alexa.
 
+## How it works
+
+### 1. We connect a Walabot to a RPi and install both on the door header 
+
+### 2. Run the server
+ * Go to the repo folder
+ * Run `python main.py` 
+ * Run `ngrok http 5000` (you'll need to download ngrok first)
+ * Copy the URL output from the previous step and use it in the configuration tab at https://developer.amazon.com.
+
+### 3. Run client 
+* Make sure that on the `meeting_room_client.py` you have the server's IP confiugred
+* Run `meeting_room_client.py`on RPi
+
+Once that's done, it means that the number of people in the room is constantly streamed to the server
+
+
+### 4. Create the Alexa APP
+We have an Alexa app that we developed.
+TODO - need to find a way to make it public and the server IP dynamic.
+
+
 ## Questions you can ask Alexa ##
 * Alexa, meeting room
 * Alexa, search meeting room for 3 people
 * Alexa, ask meeting room how many people are in the yellow room
 * Alexa, ask meeting room if the yellow room is free/available
 
-## Getting started ##
- * Go to the repo folder
- * Run `python main.py` 
- * Run `ngrok http 5000`
- * Copy the URL output from the previous step and use it in the configuration tabe at https://developer.amazon.com.
- 
-## Testing without Walabot ##
+ ## Testing without Walabot ##
  * Go to repo folder
  * Run `python`
  * Run `import json, socket`
