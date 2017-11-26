@@ -21,6 +21,7 @@ Once that's done, it means that the number of people in the room is constantly s
 
 ### 4. Create the Alexa APP
 We have an Alexa app that we developed.
+
 TODO - need to find a way to make it public and the server IP dynamic.
 
 
