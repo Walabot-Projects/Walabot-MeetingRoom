@@ -3,11 +3,9 @@ from sys import platform
 from os import system
 from imp import load_source
 from enum import Enum
-import socket
-import json
 
-WalabotAPI = load_source('WalabotAPI', 'C:/Program Files/Walabot/WalabotSDK/python/WalabotAPI.py')
-WalabotAPI.Init()
+import WalabotAPI as walabotAPI
+walabotAPI.Init()
 
 # TODO: Need to be configured to real server's ip and port
 SERVER_ADDRESS = "127.0.0.1"
@@ -112,27 +110,27 @@ class PeopleCounter:
 def PeopleCounterApp():
     # PeopleCounter object
     people_counter = PeopleCounter()
-    # WalabotAPI.SetArenaR - input parameters
+    # walabotAPI.SetArenaR - input parameters
     rArenaMin, rArenaMax, rArenaRes = 5, 120, 5
-    # WalabotAPI.SetArenaPhi - input parameters
+    # walabotAPI.SetArenaPhi - input parameters
     phiArenaMin, phiArenaMax, phiArenaRes = -60, 60, 3
-    # WalabotAPI.SetArenaTheta - input parameters
+    # walabotAPI.SetArenaTheta - input parameters
     thetaArenaMin, thetaArenaMax, thetaArenaRes = -20, 20, 10
     # Configure Walabot database install location (for windows)
-    WalabotAPI.SetSettingsFolder()
+    walabotAPI.SetSettingsFolder()
     # 1) Connect: Establish communication with walabot.
-    WalabotAPI.ConnectAny()
+    walabotAPI.ConnectAny()
     # 2) Configure: Set scan profile and arena
     # Set Profile - to Tracker.
-    WalabotAPI.SetProfile(WalabotAPI.PROF_TRACKER)
+    walabotAPI.SetProfile(walabotAPI.PROF_TRACKER)
     # Set arena by Polar coordinates, with arena resolution
-    WalabotAPI.SetArenaR(rArenaMin, rArenaMax, rArenaRes)
-    WalabotAPI.SetArenaPhi(phiArenaMin, phiArenaMax, phiArenaRes)
-    WalabotAPI.SetArenaTheta(thetaArenaMin, thetaArenaMax, thetaArenaRes)
+    walabotAPI.SetArenaR(rArenaMin, rArenaMax, rArenaRes)
+    walabotAPI.SetArenaPhi(phiArenaMin, phiArenaMax, phiArenaRes)
+    walabotAPI.SetArenaTheta(thetaArenaMin, thetaArenaMax, thetaArenaRes)
     # Walabot filtering MTI
-    WalabotAPI.SetDynamicImageFilter(WalabotAPI.FILTER_TYPE_MTI)
+    walabotAPI.SetDynamicImageFilter(walabotAPI.FILTER_TYPE_MTI)
     # 3) Start: Start the system in preparation for scanning.
-    WalabotAPI.Start()
+    walabotAPI.Start()
 
     try:
         client_socket = socket.socket()
@@ -141,9 +139,9 @@ def PeopleCounterApp():
         while True:
             # 4) Trigger: Scan (sense) according to profile and record signals
             # to be available for processing and retrieval.
-            WalabotAPI.Trigger()
+            walabotAPI.Trigger()
             # 5) Get action: retrieve the last completed triggered recording
-            targets = WalabotAPI.GetTrackerTargets()
+            targets = walabotAPI.GetTrackerTargets()
             # 6) Sort targets by amplitude
             targets = sorted(targets, key=lambda x: x.zPosCm, reverse=True)
             # 7) Update state and get people count
@@ -166,9 +164,9 @@ def PeopleCounterApp():
         pass
     finally:
         # 7) Stop and Disconnect.
-        WalabotAPI.Stop()
-        WalabotAPI.Disconnect()
-        WalabotAPI.Clean()
+        walabotAPI.Stop()
+        walabotAPI.Disconnect()
+        walabotAPI.Clean()
     print('Terminated successfully!')
 
 
