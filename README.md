@@ -4,7 +4,7 @@ It's an example of an integration between Walabot and Alexa.
 
 ## How it works
 
-### 1. We connect a Walabot to a RPi and install both on the door header 
+### 1. Connect a Walabot to a RPi and install both on the door header 
 
 ### 2. Run the server
  * Go to the repo folder
