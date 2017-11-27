@@ -3,6 +3,7 @@ from sys import platform
 from os import system
 from imp import load_source
 from enum import Enum
+import socket
 
 import WalabotAPI as walabotAPI
 walabotAPI.Init()
