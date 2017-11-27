@@ -8,7 +8,7 @@ It's an example of an integration between Walabot and Alexa.
 
 ### 2. Run the server
  * Go to the repo folder
- * In the server folder, edit the `DB_PATH` variable in the `config.py` file to be the server location
+ * In the server folder, edit the `DB_PATH` variable in the `config.py` file to be the server folder path
  * In the server folder, edit the `HOST` variable in the `config.py` to be the server ip address 
  * Run `python main.py` 
  * Run `ngrok http 5000` (you'll need to download ngrok first)
