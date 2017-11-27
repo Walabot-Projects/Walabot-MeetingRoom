@@ -8,6 +8,7 @@ It's an example of an integration between Walabot and Alexa.
 
 ### 2. Run the server
  * Go to the repo folder
+ * In the server folder, edit the `DB_PATH` variable in the `config.py` file to be the server location
  * Run `python main.py` 
  * Run `ngrok http 5000` (you'll need to download ngrok first)
  * Copy the URL output from the previous step and use it in the configuration tab at https://developer.amazon.com.
